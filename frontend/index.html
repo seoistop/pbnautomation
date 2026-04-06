@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PBN Automation Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>PBN Automation Dashboard</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>API Settings</h2>
+      <label>
+        API Base URL
+        <input type="text" id="api-url" value="http://localhost:8000" />
+      </label>
+      <label>
+        API Token
+        <input type="password" id="api-token" placeholder="Bearer token" />
+      </label>
+      <button id="save-settings">Save Settings</button>
+    </section>
+
+    <section class="card">
+      <h2>Sites</h2>
+      <button id="refresh-sites">Refresh Sites</button>
+      <table id="sites-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Domain</th>
+            <th>UX Block</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Create Task</h2>
+      <form id="task-form">
+        <label>Site ID <input type="number" name="site_id" required /></label>
+        <label>URL <input type="url" name="url" required /></label>
+        <label>Anchor Text <input type="text" name="anchor_text" required /></label>
+        <label>HTML Before <input type="text" name="html_wrapper_before" /></label>
+        <label>HTML After <input type="text" name="html_wrapper_after" /></label>
+        <button type="submit">Create Task</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Tasks</h2>
+      <button id="refresh-tasks">Refresh Tasks</button>
+      <table id="tasks-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Site</th>
+            <th>Anchor</th>
+            <th>Status</th>
+            <th>Updated</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Built for Flatsome UX Block automation
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
